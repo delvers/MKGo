@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:MKGo"
              x:Class="MKGo.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
+  <Label Text="Welcome to MKGo!"
            VerticalOptions="Center"
            HorizontalOptions="Center" />
 
