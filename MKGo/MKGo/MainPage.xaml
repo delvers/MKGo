@@ -1,11 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MKGo"
-             x:Class="MKGo.MainPage">
-
-  <Label Text="Welcome to MKGo!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
-
-</ContentPage>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
+				  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+				  xmlns:local="clr-namespace:MKGo;assembly=MKGo"
+				  x:Class="MKGo.MainPage">
+  <MasterDetailPage.Master>
+  	<local:MasterPage x:Name="masterPage" />
+  </MasterDetailPage.Master>
+	<MasterDetailPage.Detail>
+		<NavigationPage>
+			<x:Arguments>
+				<local:MapPage />
+			</x:Arguments>
+		</NavigationPage>
+	</MasterDetailPage.Detail>
+</MasterDetailPage>
