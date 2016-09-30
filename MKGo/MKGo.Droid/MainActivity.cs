@@ -12,8 +12,8 @@ namespace MKGo.Droid
 {
     [Activity(Label = "MKGo.Droid", 
               Icon = "@drawable/icon", 
-              Theme = "@style/MainTheme", 
-              MainLauncher = true, 
+              Theme = "@style/MainTheme.Base", 
+             // MainLauncher = true, 
               ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
