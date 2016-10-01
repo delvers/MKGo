@@ -10,31 +10,38 @@ namespace MKGo
 {
     public class Items
     {
-        static object locker = new object();
         private SQLiteConnection database;
 
-        public Items()
+        public Items(Database db)
         {
-            database = DependencyService.Get<ISQLite>().GetConnection();
-            database.CreateTable<Item>();
+            database = db.GetConnection();
         }
 
         public IEnumerable<Item> GetItems()
         {
-            return (from i in database.Table<Item>() select i).ToList();
+            lock (App.dbLock)
+            {
+                return (from i in database.Table<Item>() select i).ToList();
+            }
         }
         public IEnumerable<Item> GetItemsNotDone()
         {
-            return database.Query<Item>("SELECT * FROM [Item] WHERE [Done] = 0");
+            lock (App.dbLock)
+            {
+                return database.Query<Item>("SELECT * FROM [Item] WHERE [Done] = 0");
+            }
         }
         public Item GetItem(int id)
         {
-            return database.Table<Item>().FirstOrDefault(x => x.ID == id);
+            lock (App.dbLock)
+            {
+                return database.Table<Item>().FirstOrDefault(x => x.ID == id);
+            }
         }
 
         public int SaveItem(Item item)
         {
-            lock (locker)
+            lock (App.dbLock)
             {
                 if (item.ID != 0)
                 {
@@ -50,7 +57,10 @@ namespace MKGo
 
         public int DeleteItem(int id)
         {
-            return database.Delete<Item>(id);
+            lock (App.dbLock)
+            {
+                return database.Delete<Item>(id);
+            }
         }
     }
 }

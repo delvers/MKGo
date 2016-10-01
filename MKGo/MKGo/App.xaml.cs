@@ -11,11 +11,18 @@ namespace MKGo
     {
 
         static Items items;
+        static Tours tours;
+        static CollectionItems collectionItems;
+
+        public static object dbLock;
+        private static Database database;
+
 
         public App()
         {
             InitializeComponent();
-
+            dbLock = new object();
+            database = new Database();
             MainPage = new MKGo.MainPage();
         }
 
@@ -40,9 +47,33 @@ namespace MKGo
             {
                 if (items == null)
                 {
-                    items = new Items();
+                    items = new Items(database);
                 }
                 return items;
+            }
+        }
+
+        public static Tours Tours
+        {
+            get
+            {
+                if (tours == null)
+                {
+                    tours = new Tours(database);
+                }
+                return tours;
+            }
+        }
+
+        public static CollectionItems CollectionItems
+        {
+            get
+            {
+                if (collectionItems == null)
+                {
+                    collectionItems = new CollectionItems(database);
+                }
+                return collectionItems;
             }
         }
 

@@ -38,9 +38,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\CollectionItem.cs" />
+    <Compile Include="Models\CollectionItems.cs" />
+    <Compile Include="Models\Database.cs" />
+    <Compile Include="Models\Exhibition.cs" />
     <Compile Include="Models\ISQLite.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Items.cs" />
+    <Compile Include="Models\Tour.cs" />
+    <Compile Include="Models\Tours.cs" />
     <Compile Include="Views\ItemPage.xaml.cs">
       <DependentUpon>ItemPage.xaml</DependentUpon>
     </Compile>
