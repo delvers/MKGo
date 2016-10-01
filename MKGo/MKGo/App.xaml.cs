@@ -9,6 +9,9 @@ namespace MKGo
 {
     public partial class App : Application
     {
+
+        static Items items;
+
         public App()
         {
             InitializeComponent();
@@ -30,5 +33,18 @@ namespace MKGo
         {
             // Handle when your app resumes
         }
+
+        public static Items Items
+        {
+            get
+            {
+                if (items == null)
+                {
+                    items = new Items();
+                }
+                return items;
+            }
+        }
+
     }
 }

@@ -7,7 +7,7 @@ using SQLite;
 
 namespace MKGo
 {
-    class Item
+    public class Item
     {
         public Item()
         {
