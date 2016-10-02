@@ -1,4 +1,6 @@
 ﻿using SQLite;
+using SQLite.Net;
+using SQLiteNetExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,7 @@ namespace MKGo
         {
             database = DependencyService.Get<ISQLite>().GetConnection();
             database.CreateTable<Item>();
+            database.CreateTable<Exhibition>();
             database.CreateTable<Tour>();
             database.CreateTable<CollectionItem>();
         }

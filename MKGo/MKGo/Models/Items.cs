@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 using Xamarin.Forms;
+using SQLite.Net;
 
 namespace MKGo
 {
