@@ -96,6 +96,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
+    <Content Include="MKGoSQLite.db3" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

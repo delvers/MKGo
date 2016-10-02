@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using System.IO;
 
 namespace MKGo.iOS
 {
@@ -22,10 +23,15 @@ namespace MKGo.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            // copy database to writeable space
+            var appdir = NSBundle.MainBundle.ResourcePath;
+            SQLite_iOS.copyDatabase(appdir);
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }
+
     }
 }
