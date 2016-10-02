@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace MKGo
 {
-    class Tour
+    public class Tour
     {
         public Tour() { }
 
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         public string Title { get; set; }
 
@@ -28,5 +28,17 @@ namespace MKGo
         [OneToOne]
         public Exhibition Exhibition { get; set; }
 
+        [ManyToMany(typeof(TourItem))]
+        public List<Item> Items { get; set; }
+
+    }
+
+    public class TourItem
+    {
+        [ForeignKey(typeof(Tour))]
+        public int TourId { get; set; }
+
+        [ForeignKey(typeof(Item))]
+        public int ItemId { get; set; }
     }
 }

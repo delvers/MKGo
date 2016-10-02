@@ -45,6 +45,8 @@
     <Compile Include="Models\ISQLite.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Items.cs" />
+    <Compile Include="Models\Quest.cs" />
+    <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Tour.cs" />
     <Compile Include="Models\Tours.cs" />
     <Compile Include="Views\ItemPage.xaml.cs">

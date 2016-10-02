@@ -26,7 +26,7 @@ namespace MKGo
         void deleteClicked(object sender, EventArgs e)
         {
             var item = (Item)BindingContext;
-            App.Items.DeleteItem(item.ID);
+            App.Items.DeleteItem(item.Id);
             this.Navigation.PopAsync();
         }
 

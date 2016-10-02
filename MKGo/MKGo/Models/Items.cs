@@ -36,7 +36,7 @@ namespace MKGo
         {
             lock (App.dbLock)
             {
-                return database.Table<Item>().FirstOrDefault(x => x.ID == id);
+                return database.Table<Item>().FirstOrDefault(x => x.Id == id);
             }
         }
 
@@ -44,10 +44,10 @@ namespace MKGo
         {
             lock (App.dbLock)
             {
-                if (item.ID != 0)
+                if (item.Id != 0)
                 {
                     database.Update(item);
-                    return item.ID;
+                    return item.Id;
                 }
                 else
                 {
