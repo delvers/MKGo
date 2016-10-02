@@ -6,6 +6,9 @@
   <StackLayout VerticalOptions="StartAndExpand" Padding="20">
     <Label Text="Title"/>
     <Entry x:Name="titleEntry" Text="{Binding Title}"/>
+    <Label Text="{Binding ImageSource}"/>
+    <Image Source="{Binding ImageSource}" />
+    
     <Label Text="Description" />
     <Entry x:Name="descriptionEntry" Text="{Binding Description}"/>
     <Button Text="Save" Clicked="saveClicked"/>

@@ -11,7 +11,7 @@ namespace MKGo
     public partial class ItemPage : ContentPage
     {
         public ItemPage()
-        {
+        {  
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, true);
         }

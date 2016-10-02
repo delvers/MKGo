@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SQLite;
 using SQLite.Net.Attributes;
 using SQLiteNetExtensions.Attributes;
+using Xamarin.Forms;
 
 namespace MKGo
 {
@@ -42,5 +43,11 @@ namespace MKGo
         [OneToOne]
         public Quest Quest { get; set; }
 
+        [Ignore]
+        public String ImageSource { get
+            {
+                return "item" + InventoryNumber.Replace(".","") + "1.jpg";
+            }
+        }
     }
 }

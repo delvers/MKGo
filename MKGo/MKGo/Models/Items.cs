@@ -36,6 +36,7 @@ namespace MKGo
         {
             lock (App.dbLock)
             {
+               
                 return database.Table<Item>().FirstOrDefault(x => x.Id == id);
             }
         }

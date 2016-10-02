@@ -24,11 +24,14 @@ namespace MKGo
             dbLock = new object();
             database = new Database();
             MainPage = new MKGo.MainPage();
+
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
+            database.createExampleData();
+
         }
 
         protected override void OnSleep()
