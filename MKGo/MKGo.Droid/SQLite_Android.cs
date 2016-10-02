@@ -15,24 +15,31 @@ using System.IO;
 using SQLiteNetExtensions;
 using SQLite.Net;
 using SQLite.Net.Platform.XamarinAndroid;
+using Android.Content.Res;
 
 [assembly: Dependency (typeof (SQLite_Android))]
 namespace MKGo.Droid
 {
     class SQLite_Android : ISQLite
     {
+
+        public static string DatabaseFilePath { get {
+                var sqliteFilename = "MKGoSQLite.db3";
+                string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal); // Documents folder
+                var path = Path.Combine(documentsPath, sqliteFilename);
+                return path;
+            } }
+
         public SQLite_Android() { }
 
         public SQLiteConnection GetConnection()
         {
-            var sqliteFilename = "MKGoSQLite.db3";
-            string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal); // Documents folder
-            var path = Path.Combine(documentsPath, sqliteFilename);
-            // Create the connection
-            
-            var conn = new SQLiteConnection(new SQLitePlatformAndroid(), path);
+
+            // Create the connection   
+            var conn = new SQLiteConnection(new SQLitePlatformAndroid(), DatabaseFilePath);
             // Return the database connection
             return conn;
         }
+
     }
 }
