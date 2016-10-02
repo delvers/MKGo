@@ -21,8 +21,11 @@ namespace MKGo
             database.CreateTable<Item>();
             database.CreateTable<Exhibition>();
             database.CreateTable<Tour>();
+            database.CreateTable<TourItem>();
             database.CreateTable<CollectionItem>();
-            
+            database.CreateTable<Quest>();
+            database.CreateTable<Room>();
+
         }
 
         public SQLiteConnection GetConnection()

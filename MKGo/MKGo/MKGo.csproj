@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
+    <None Include="MKGoSQLite.db3" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
