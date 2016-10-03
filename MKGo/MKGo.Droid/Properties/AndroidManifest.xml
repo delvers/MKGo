@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="MKGo.droid" android:versionCode="001">
 	<uses-sdk android:minSdkVersion="15" />
-	<uses-permission android:name="android.permission.CALL_PHONE" />
-	<application android:label="MKGo.Droid"></application>
+	<application android:label="MKGo" android:icon="@drawable/icon"></application>
 </manifest>
