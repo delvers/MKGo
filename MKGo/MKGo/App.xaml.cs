@@ -30,7 +30,7 @@ namespace MKGo
         protected override void OnStart()
         {
             // Handle when your app starts
-           // database.createExampleData();
+            database.createExampleData();
 
         }
 
