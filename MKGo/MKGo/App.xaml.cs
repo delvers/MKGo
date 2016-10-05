@@ -21,8 +21,8 @@ namespace MKGo
             InitializeComponent();
             dbLock = new object();
             database = new Database();
-
-            MainPage = new MKGo.MainPage();
+            MainPage = new NavigationPage(new MKGo.MainPage());
+            //MainPage = new MKGo.MainPage();
 
         }
 
