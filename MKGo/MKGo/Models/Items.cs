@@ -4,65 +4,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Attributes;
 using Xamarin.Forms;
-using SQLite.Net;
 
 namespace MKGo
 {
-    public class Items
+    public class Item : IModel
     {
-        private SQLiteConnection database;
+        public Item(){}
 
-        public Items(Database db)
-        {
-            database = db.GetConnection();
-        }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
 
-        public IEnumerable<Item> GetItems()
-        {
-            lock (App.dbLock)
-            {
-                return (from i in database.Table<Item>() select i).ToList();
-            }
-        }
-        public IEnumerable<Item> GetItemsNotDone()
-        {
-            lock (App.dbLock)
-            {
-                return database.Query<Item>("SELECT * FROM [Item] WHERE [Done] = 0");
-            }
-        }
-        public Item GetItem(int id)
-        {
-            lock (App.dbLock)
-            {
-               
-                return database.Table<Item>().FirstOrDefault(x => x.Id == id);
-            }
-        }
+        public string Title { get; set; }
 
-        public int SaveItem(Item item)
-        {
-            lock (App.dbLock)
-            {
-                if (item.Id != 0)
-                {
-                    database.Update(item);
-                    return item.Id;
-                }
-                else
-                {
-                    return database.Insert(item);
-                }
-            }
-        }
+        public string InventoryNumber { get; set; }
 
-        public int DeleteItem(int id)
-        {
-            lock (App.dbLock)
+        [MaxLength(600)]
+        public string Description { get; set; }
+
+        public string Url { get; set; }
+
+        public int Prio { get; set; }
+
+        [ManyToMany(typeof(TourItem))]
+        public List<Tour> Tours { get; set; }
+
+        [ForeignKey(typeof(Room))]
+        public int RoomId { get; set; }
+
+        [OneToOne]
+        public Room Room { get; set; }
+
+        [ForeignKey(typeof(Quest))]
+        public int QuestId { get; set; }
+
+        [OneToOne]
+        public Quest Quest { get; set; }
+
+        [Ignore]
+        public String ImageSource { get
             {
-                return database.Delete<Item>(id);
+                return "item" + InventoryNumber.Replace(".","") + "1.jpg";
             }
         }
     }
+
+    public class Items : AbstractModel<Item>{}
 }

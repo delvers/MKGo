@@ -36,9 +36,22 @@ namespace MKGo
         public void createExampleData()
         {
             var a = App.Items.GetItems().ToList();
-
             if (a.Count < 1)
             {
+                // create Rooms
+                var rooms = new List<Room>();
+                rooms.Add(new Room("raum 1"));
+
+                // create Exhibition
+                var exhibition = new Exhibition();
+                exhibition.Title = "Antike";
+                exhibition.Description = "Beschreibung";
+                exhibition.Rooms = rooms;
+
+
+                // create Items
+                var items = new List<Item>();
+
                 var olpe = new Item();
                 olpe.Title = "Olpe mit Tierfriesen";
                 olpe.Description = "Das schlanke Gefäß mit weit ausladender Mündung und dreiteiligem Rotellenhenkel ist " +
@@ -57,6 +70,7 @@ namespace MKGo
                 olpe.Prio = 5;
                 olpe.Url = "http://sammlungonline.mkg-hamburg.de/de/object/Olpe-mit-Tierfriesen/1962.41/dc00126052";
                 olpe.Id = 0;
+                items.Add(olpe);
 
                 var hydria = new Item();
                 hydria.Title = "Hydria (Naiskos-Szene)";
@@ -78,6 +92,7 @@ namespace MKGo
                 hydria.Prio = 5;
                 hydria.Url = "http://sammlungonline.mkg-hamburg.de/de/object/Hydria-Naiskos-Szene/1984.447.b/dc00126708";
                 hydria.Id = 1;
+                items.Add(hydria);
 
                 var pelike = new Item();
                 pelike.Title = "Pelike (Boreas entführt Oreithyia)";
@@ -100,13 +115,18 @@ namespace MKGo
                 pelike.Prio = 5;
                 pelike.Url = "http://sammlungonline.mkg-hamburg.de/de/object/Pelike-Boreas-entführt-Oreithyia/1980.174/dc00126652";
                 pelike.Id = 2;
+                items.Add(pelike);
+
+
+                var tour = new Tour();
+                tour.Author = "Someone";
+                tour.Title = "Begegnung mit dem Fremden";
+                tour.Exhibition = exhibition;
+                tour.Items = items;
 
                 lock (App.dbLock)
                 {
-                    database.Insert(olpe);
-                    database.Insert(hydria);
-                    database.Insert(pelike);
-
+                    database.Insert(tour);
                 }
             }
         }

@@ -10,7 +10,7 @@ namespace MKGo
 {
     public class Room
     {
-        public Room() { }
+        public Room(string title) { }
 
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

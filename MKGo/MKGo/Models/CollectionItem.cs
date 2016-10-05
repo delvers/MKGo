@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MKGo
 {
-    public class CollectionItem
+    public class CollectionItem : IModel
     {
         public CollectionItem() { }
 
@@ -27,4 +27,6 @@ namespace MKGo
         public Item Item { get; set; }
 
     }
+
+    public class CollectionItems : AbstractModel<CollectionItem> { }
 }

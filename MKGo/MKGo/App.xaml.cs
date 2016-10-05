@@ -11,8 +11,6 @@ namespace MKGo
     {
 
         static Items items;
-        static Tours tours;
-        static CollectionItems collectionItems;
 
         public static object dbLock;
         private static Database database;
@@ -23,6 +21,7 @@ namespace MKGo
             InitializeComponent();
             dbLock = new object();
             database = new Database();
+
             MainPage = new MKGo.MainPage();
 
         }
@@ -44,41 +43,18 @@ namespace MKGo
             // Handle when your app resumes
         }
 
-        public static Items Items
-        {
-            get
+        public static Items Items { get
             {
-                if (items == null)
+                if(items == null)
                 {
-                    items = new Items(database);
-                }
-                return items;
-            }
-        }
-
-        public static Tours Tours
-        {
-            get
-            {
-                if (tours == null)
+                    items = new Items();
+                    items.database = database.GetConnection();
+                    return items; 
+                } else
                 {
-                    tours = new Tours(database);
+                    return items;
                 }
-                return tours;
-            }
-        }
-
-        public static CollectionItems CollectionItems
-        {
-            get
-            {
-                if (collectionItems == null)
-                {
-                    collectionItems = new CollectionItems(database);
-                }
-                return collectionItems;
-            }
-        }
+            } }
 
     }
 }
