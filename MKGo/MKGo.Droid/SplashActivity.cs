@@ -6,6 +6,7 @@ using Android.Support.V7.App;
 using Android.Util;
 using System.IO;
 using System;
+using ZXing.Mobile;
 
 namespace MKGo.Droid
 {
@@ -35,6 +36,7 @@ namespace MKGo.Droid
                     ReadWriteStream(s, writeStream);
                 }
                 Log.Debug(TAG, "Database copied successful.");*/
+                MobileBarcodeScanner.Initialize(Application);
                 Log.Debug(TAG, "Working in the background - important stuff.");
             });
 

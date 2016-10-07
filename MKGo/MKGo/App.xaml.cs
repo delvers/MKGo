@@ -47,8 +47,15 @@ namespace MKGo
 
         public static Tour GetCurrentTour()
         {
-            var currentTour = App.Tours.GetItemWithChildren(Settings.currentTourId);
-            return currentTour;
+            if (Settings.currentTourId >= 0)
+            {
+                var currentTour = App.Tours.GetItemWithChildren(Settings.currentTourId);
+                return currentTour;
+            } else
+            {
+                return null;
+            }
+            
         }
 
         public static Items Items { get

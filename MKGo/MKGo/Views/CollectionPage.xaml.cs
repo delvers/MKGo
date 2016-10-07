@@ -1,15 +1,22 @@
-﻿using System;
+﻿using Java.IO;
+using System;
 using Xamarin.Forms;
 
 namespace MKGo
 {
     public partial class CollectionPage : ContentPage
     {
-        private void openScanner(){
-            
-            var scannerPage = new ScannerPage();
-            Navigation.PushAsync(scannerPage);
-            
+        private async void openScanner()
+        {
+
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            scanner.BottomText = "Finde und scanne deinen nächsten Fund!";
+            scanner.TopText = "Scanner";
+            var result = await scanner.Scan();
+
+            if (result != null)
+                 Title = result.Text;
+
         }
 
         public CollectionPage()
