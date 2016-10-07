@@ -29,6 +29,12 @@ namespace MKGo.Droid
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::MKGo.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::MKGo.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::MKGo.Droid.Resource.Attribute.actionBarSize;
+			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscanneractivitylayout = global::MKGo.Droid.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscannerfragmentlayout = global::MKGo.Droid.Resource.Layout.zxingscannerfragmentlayout;
+			global::ZXing.Net.Mobile.Forms.Android.Resource.String.library_name = global::MKGo.Droid.Resource.String.library_name;
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::MKGo.Droid.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::MKGo.Droid.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::MKGo.Droid.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Animation
@@ -2335,6 +2341,9 @@ namespace MKGo.Droid
 			// aapt resource value: 0x7f08001f
 			public const int collapseActionView = 2131230751;
 			
+			// aapt resource value: 0x7f08009a
+			public const int contentFrame = 2131230874;
+			
 			// aapt resource value: 0x7f08004a
 			public const int contentPanel = 2131230794;
 			
@@ -2953,6 +2962,12 @@ namespace MKGo.Droid
 			// aapt resource value: 0x7f030038
 			public const int Toolbar = 2130903096;
 			
+			// aapt resource value: 0x7f030039
+			public const int zxingscanneractivitylayout = 2130903097;
+			
+			// aapt resource value: 0x7f03003a
+			public const int zxingscannerfragmentlayout = 2130903098;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -2982,11 +2997,11 @@ namespace MKGo.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f090027
-			public const int ApplicationName = 2131296295;
+			// aapt resource value: 0x7f090028
+			public const int ApplicationName = 2131296296;
 			
-			// aapt resource value: 0x7f090026
-			public const int Hello = 2131296294;
+			// aapt resource value: 0x7f090027
+			public const int Hello = 2131296295;
 			
 			// aapt resource value: 0x7f09000f
 			public const int abc_action_bar_home_description = 2131296271;
@@ -3053,6 +3068,9 @@ namespace MKGo.Droid
 			
 			// aapt resource value: 0x7f090025
 			public const int character_counter_pattern = 2131296293;
+			
+			// aapt resource value: 0x7f090026
+			public const int library_name = 2131296294;
 			
 			// aapt resource value: 0x7f090000
 			public const int mr_button_content_description = 2131296256;

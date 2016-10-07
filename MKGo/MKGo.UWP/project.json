@@ -6,7 +6,8 @@
     "SQLite.Net.Core-PCL": "3.1.1",
     "SQLiteNetExtensions": "1.2.5",
     "Xam.Plugins.Settings": "2.5.1",
-    "Xamarin.Forms": "2.3.2.127"
+    "Xamarin.Forms": "2.3.2.127",
+    "ZXing.Net.Mobile.Forms": "2.1.47"
   },
   "frameworks": {
     "uap10.0": {}
