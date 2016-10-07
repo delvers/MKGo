@@ -66,7 +66,8 @@ namespace MKGo
             base.OnAppearing();
             // reset the 'resume' id, since we just want to re-start here
             //((App)App.Current).ResumeAtTodoId = -1;
-            listView.ItemsSource = App.Items.GetItems();
+            var currentTour = App.GetCurrentTour();
+            listView.ItemsSource = currentTour.Items; // change later to collectedItems
         }
 
         void listItemSelected(object sender, SelectedItemChangedEventArgs e)

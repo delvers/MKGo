@@ -10,10 +10,11 @@ namespace MKGo
     public partial class App : Application
     {
 
-        static Items items;
-
         public static object dbLock;
         private static Database database;
+
+        static Items items;
+        static Tours tours;
 
 
         public App()
@@ -21,7 +22,8 @@ namespace MKGo
             InitializeComponent();
             dbLock = new object();
             database = new Database();
-            MainPage = new NavigationPage(new MKGo.MainPage());
+            database.createExampleData();
+            MainPage = new MKGo.MainPage();
             //MainPage = new MKGo.MainPage();
 
         }
@@ -43,6 +45,12 @@ namespace MKGo
             // Handle when your app resumes
         }
 
+        public static Tour GetCurrentTour()
+        {
+            var currentTour = App.Tours.GetItemWithChildren(Settings.currentTourId);
+            return currentTour;
+        }
+
         public static Items Items { get
             {
                 if(items == null)
@@ -54,7 +62,24 @@ namespace MKGo
                 {
                     return items;
                 }
-            } }
+            }
+        }
+        public static Tours Tours
+        {
+            get
+            {
+                if (tours == null)
+                {
+                    tours = new Tours();
+                    tours.database = database.GetConnection();
+                    return tours;
+                }
+                else
+                {
+                    return tours;
+                }
+            }
+        }
 
     }
 }

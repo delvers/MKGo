@@ -1,6 +1,7 @@
 ﻿using SQLite;
 using SQLite.Net.Attributes;
 using SQLiteNetExtensions.Attributes;
+using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,5 +43,12 @@ namespace MKGo
         public int ItemId { get; set; }
     }
 
-    public class Tours : AbstractModel<Tour> { }
+    public class Tours : AbstractModel<Tour> {
+
+        public Tour GetItemWithChildren(int itemId)
+        {
+
+            return database.GetWithChildren<Tour>(itemId);
+        }
+    }
 }

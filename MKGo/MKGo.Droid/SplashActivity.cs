@@ -26,7 +26,7 @@ namespace MKGo.Droid
 
             Task startupWork = new Task(() =>
             {
-                Log.Debug(TAG, "Performing some startup work that takes a bit of time.");
+                /*Log.Debug(TAG, "Performing some startup work that takes a bit of time.");
                 Log.Debug(TAG, "Performing copy database.");
                 if (!System.IO.File.Exists(SQLite_Android.DatabaseFilePath))
                 {
@@ -34,7 +34,7 @@ namespace MKGo.Droid
                     FileStream writeStream = new FileStream(SQLite_Android.DatabaseFilePath, FileMode.OpenOrCreate, FileAccess.Write);
                     ReadWriteStream(s, writeStream);
                 }
-                Log.Debug(TAG, "Database copied successful.");
+                Log.Debug(TAG, "Database copied successful.");*/
                 Log.Debug(TAG, "Working in the background - important stuff.");
             });
 

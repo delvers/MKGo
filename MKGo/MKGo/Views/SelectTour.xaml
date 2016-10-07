@@ -9,7 +9,7 @@
         <ViewCell.View>
           <StackLayout Padding="20,0,20,0"
                        Orientation="Horizontal"
-                       HorizontalOptions="FillAndExpend">
+                       HorizontalOptions="FillAndExpand">
             <Label Text="{Binding Title}"
                      VerticalTextAlignment="Center"
                      HorizontalOptions="StartAndExpand"/>

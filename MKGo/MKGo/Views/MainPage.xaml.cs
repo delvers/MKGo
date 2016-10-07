@@ -13,6 +13,16 @@ namespace MKGo
 
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            if (Settings.currentTourId < 0)
+            {
+                var selectTourPage = new SelectTour();
+                await Navigation.PushModalAsync(selectTourPage);
+            }
+        }
+
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as MasterPageItem;

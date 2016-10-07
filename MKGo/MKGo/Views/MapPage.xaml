@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 x:Class="MKGo.MapPage"
-			 Title="Map of {exhibition}">
+			 Title="{Binding Title}">
   <ContentPage.Content>
     <StackLayout>
       <Label Text="TODO Render a Map of the current Tour" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />

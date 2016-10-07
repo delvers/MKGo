@@ -8,5 +8,10 @@ namespace MKGo
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            BindingContext = App.GetCurrentTour();
+        }
     }
 }

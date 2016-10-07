@@ -22,20 +22,20 @@ namespace MKGo
     #region Setting Constants
 
     private const string CurrentTourKey = "currentTour";
-    private static readonly string CurrentTourDefault = string.Empty;
+    private static readonly int CurrentTourDefault = -1;
 
     #endregion
 
 
-    public static string currentTour
+    public static int currentTourId
     {
       get
       {
-        return AppSettings.GetValueOrDefault<string>(CurrentTourKey, CurrentTourDefault);
+        return AppSettings.GetValueOrDefault<int>(CurrentTourKey, CurrentTourDefault);
       }
       set
       {
-        AppSettings.AddOrUpdateValue<string>(CurrentTourKey, value);
+        AppSettings.AddOrUpdateValue<int>(CurrentTourKey, value);
       }
     }
 
