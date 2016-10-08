@@ -1,26 +1,29 @@
 ﻿using Java.IO;
 using System;
 using Xamarin.Forms;
+using ZXing.Net.Mobile.Forms;
 
 namespace MKGo
 {
     public partial class CollectionPage : ContentPage
     {
-        private async void openScanner()
+        async void openScanner()
         {
 
-            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-            scanner.BottomText = "Finde und scanne deinen nächsten Fund!";
-            scanner.TopText = "Scanner";
-            var result = await scanner.Scan();
+          var scanPage = new ZXingScannerPage();
+                scanPage.OnScanResult += (result) => {
+                    scanPage.IsScanning = false;
+                    Device.BeginInvokeOnMainThread(() => {
+                        var item = App.CollectionItems.addItem(result.Text);
+                        var itemPage = new ItemPage(scanPage);
+                        itemPage.BindingContext = item;
+                        Navigation.PushAsync(itemPage);
 
-            if (result != null)
-            {
-                if (!App.CollectionItems.addItem(result.Text))
-                {
-                    // TODO handle false qr-codes 
-                }
-            }
+                    });
+                };
+            scanPage.Title = "Scanner";
+
+                await Navigation.PushAsync(scanPage);
 
         }
 

@@ -10,10 +10,26 @@ namespace MKGo
 {
     public partial class ItemPage : ContentPage
     {
+
+        private Page _removePage;
         public ItemPage()
         {  
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, true);
+        }
+
+        public ItemPage(Page remove): this()
+        {
+            _removePage = remove;
+        }
+
+        protected override void OnAppearing()
+        {
+            if (_removePage != null)
+            {
+                Navigation.RemovePage(_removePage);
+            }
+            
         }
 
         void saveClicked(object sender, EventArgs e)

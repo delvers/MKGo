@@ -44,9 +44,19 @@ namespace MKGo
         public Quest Quest { get; set; }
 
         [Ignore]
-        public String ImageSource { get
+        public ImageSource ImageSource { get
             {
-                return "item" + InventoryNumber.Replace(".","") + "1.jpg";
+                if (InventoryNumber == null)
+                {
+                    return "test";
+                }
+
+                var filename = "item" + InventoryNumber.Replace(".", "") + "1.jpg";
+                var source = Device.OnPlatform(
+                iOS: ImageSource.FromFile("Images/"+filename),
+                Android: ImageSource.FromFile(filename),
+                WinPhone: ImageSource.FromFile("Images/"+filename));
+                return source;
             }
         }
     }

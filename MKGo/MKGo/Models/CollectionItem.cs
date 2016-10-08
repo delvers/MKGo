@@ -40,7 +40,7 @@ namespace MKGo
                 return database.GetAllWithChildren<CollectionItem>();
             }
         }
-        public bool addItem(String url)
+        public Item addItem(String url)
         {
             var item = database.Table<Item>().FirstOrDefault(x => x.Url == url);
 
@@ -50,12 +50,8 @@ namespace MKGo
                 collectioItem.collected = true;
                 collectioItem.Item = item;
                 database.InsertWithChildren(collectioItem);
-                return true;
             }
-            else
-            {
-                return false;
-            }
+            return item;
         }
     }
 }
