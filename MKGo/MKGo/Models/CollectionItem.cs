@@ -57,5 +57,9 @@ namespace MKGo
             }
             return item;
         }
+        public int deleteAll()
+        {
+            return database.DeleteAll<CollectionItem>();
+        }
     }
 }
