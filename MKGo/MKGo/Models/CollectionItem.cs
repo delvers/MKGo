@@ -46,10 +46,14 @@ namespace MKGo
 
             if (item != null)
             {
-                var collectioItem = new CollectionItem();
-                collectioItem.collected = true;
-                collectioItem.Item = item;
-                database.InsertWithChildren(collectioItem);
+                var entry = database.Table<CollectionItem>().FirstOrDefault(x => x.ItemId == item.Id);
+                if (entry == null)
+                {
+                    var collectioItem = new CollectionItem();
+                    collectioItem.collected = true;
+                    collectioItem.Item = item;
+                    database.InsertWithChildren(collectioItem);
+                }
             }
             return item;
         }
