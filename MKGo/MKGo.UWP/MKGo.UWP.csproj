@@ -112,9 +112,16 @@
     <None Include="Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="item1984447b1.jpg" />
-    <Content Include="item19801741.jpg" />
-    <Content Include="item1962411.jpg" />
+    <Content Include="Images\item191921.jpg" />
+    <Content Include="Images\item1928421.jpg" />
+    <Content Include="Images\item1949401.jpg" />
+    <Content Include="Images\item19621261.jpg" />
+    <Content Include="Images\item1962411.jpg" />
+    <Content Include="Images\item1973431.jpg" />
+    <Content Include="Images\item19801741.jpg" />
+    <Content Include="Images\item19811731.jpg" />
+    <Content Include="Images\item1984447b1.jpg" />
+    <Content Include="Images\item19893491.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

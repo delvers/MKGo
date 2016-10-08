@@ -55,10 +55,8 @@ namespace MKGo
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            // reset the 'resume' id, since we just want to re-start here
-            //((App)App.Current).ResumeAtTodoId = -1;
             var currentTour = App.CollectionItems.GetItems();
-            listView.ItemsSource = currentTour; // change later to collectedItems
+            listView.ItemsSource = currentTour;
         }
 
         void listItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -66,10 +64,6 @@ namespace MKGo
             var collectionItem = (CollectionItem)e.SelectedItem;
             var itemPage = new ItemPage();
             itemPage.BindingContext = collectionItem.Item;
-
-            //((App)App.Current).ResumeAtTodoId = todoItem.ID;
-            //Debug.WriteLine("setting ResumeAtTodoId = " + todoItem.ID);
-
             Navigation.PushAsync(itemPage);
         }
     }
