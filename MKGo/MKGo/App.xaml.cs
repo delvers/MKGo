@@ -15,6 +15,7 @@ namespace MKGo
 
         static Items items;
         static Tours tours;
+        static CollectionItems collectionItems;
 
 
         public App()
@@ -84,6 +85,22 @@ namespace MKGo
                 else
                 {
                     return tours;
+                }
+            }
+        }
+        public static CollectionItems CollectionItems
+        {
+            get
+            {
+                if (collectionItems == null)
+                {
+                    collectionItems = new CollectionItems();
+                    collectionItems.database = database.GetConnection();
+                    return collectionItems;
+                }
+                else
+                {
+                    return collectionItems;
                 }
             }
         }

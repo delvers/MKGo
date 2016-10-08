@@ -18,13 +18,16 @@ namespace MKGo
         public Database()
         {
             database = DependencyService.Get<ISQLite>().GetConnection();
-            database.CreateTable<Item>();
-            database.CreateTable<Exhibition>();
-            database.CreateTable<Tour>();
-            database.CreateTable<TourItem>();
-            database.CreateTable<CollectionItem>();
-            database.CreateTable<Quest>();
-            database.CreateTable<Room>();
+            lock (App.dbLock)
+            {
+                database.CreateTable<Item>();
+                database.CreateTable<Exhibition>();
+                database.CreateTable<Tour>();
+                database.CreateTable<TourItem>();
+                database.CreateTable<CollectionItem>();
+                database.CreateTable<Quest>();
+                database.CreateTable<Room>();
+            }
 
         }
 

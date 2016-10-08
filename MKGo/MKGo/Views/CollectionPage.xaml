@@ -11,7 +11,7 @@
             <StackLayout Padding="20,0,20,0"
                          Orientation="Horizontal"
                          HorizontalOptions="FillAndExpand">
-              <Label Text="{Binding Title}"
+              <Label Text="{Binding Item.Title}"
                      VerticalTextAlignment="Center"
                      HorizontalOptions="StartAndExpand"/>
             </StackLayout>

@@ -15,7 +15,12 @@ namespace MKGo
             var result = await scanner.Scan();
 
             if (result != null)
-                 Title = result.Text;
+            {
+                if (!App.CollectionItems.addItem(result.Text))
+                {
+                    // TODO handle false qr-codes 
+                }
+            }
 
         }
 
@@ -49,15 +54,15 @@ namespace MKGo
             base.OnAppearing();
             // reset the 'resume' id, since we just want to re-start here
             //((App)App.Current).ResumeAtTodoId = -1;
-            var currentTour = App.GetCurrentTour();
-            listView.ItemsSource = currentTour.Items; // change later to collectedItems
+            var currentTour = App.CollectionItems.GetItems();
+            listView.ItemsSource = currentTour; // change later to collectedItems
         }
 
         void listItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = (Item)e.SelectedItem;
+            var collectionItem = (CollectionItem)e.SelectedItem;
             var itemPage = new ItemPage();
-            itemPage.BindingContext = item;
+            itemPage.BindingContext = collectionItem.Item;
 
             //((App)App.Current).ResumeAtTodoId = todoItem.ID;
             //Debug.WriteLine("setting ResumeAtTodoId = " + todoItem.ID);

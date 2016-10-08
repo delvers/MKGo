@@ -1,6 +1,7 @@
 ﻿using SQLite;
 using SQLite.Net.Attributes;
 using SQLiteNetExtensions.Attributes;
+using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,5 +29,33 @@ namespace MKGo
 
     }
 
-    public class CollectionItems : AbstractModel<CollectionItem> { }
+    public class CollectionItems : AbstractModel<CollectionItem> {
+
+
+        public new List<CollectionItem> GetItems()
+        {
+            lock (App.dbLock)
+            {
+                // return collection items with children
+                return database.GetAllWithChildren<CollectionItem>();
+            }
+        }
+        public bool addItem(String url)
+        {
+            var item = database.Table<Item>().FirstOrDefault(x => x.Url == url);
+
+            if (item != null)
+            {
+                var collectioItem = new CollectionItem();
+                collectioItem.collected = true;
+                collectioItem.Item = item;
+                database.InsertWithChildren(collectioItem);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 }
