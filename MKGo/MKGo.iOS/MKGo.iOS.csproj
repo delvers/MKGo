@@ -97,7 +97,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
-    <Content Include="MKGoSQLite.db3" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -186,7 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MKGo\MKGo.csproj">
-      <Project>{8fff1925-d829-4e2b-b6b3-ac39824ddbec}</Project>
+      <Project>{33802C7A-0F10-4B40-8FF6-EAA7F9A9A749}</Project>
       <Name>MKGo</Name>
     </ProjectReference>
   </ItemGroup>
