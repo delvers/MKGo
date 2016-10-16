@@ -2059,7 +2059,7 @@ namespace MKGo.Droid
 			public const int ic_collapse_00015 = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int ic_collections_black_36dp = 2130837614;
+			public const int ic_collections = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
 			public const int ic_expand = 2130837615;
@@ -2113,10 +2113,10 @@ namespace MKGo.Droid
 			public const int ic_expand_00015 = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int ic_info_black_24dp = 2130837632;
+			public const int ic_info = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int ic_map_black_36dp = 2130837633;
+			public const int ic_map = 2130837633;
 			
 			// aapt resource value: 0x7f020082
 			public const int ic_media_pause = 2130837634;
