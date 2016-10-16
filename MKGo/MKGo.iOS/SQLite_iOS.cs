@@ -8,6 +8,8 @@ using System.IO;
 using SQLite.Net;
 using SQLite.Net.Interop;
 using SQLite.Net.Platform.XamarinIOS;
+using Foundation;
+
 
 [assembly: Dependency (typeof (SQLite_iOS))]
 namespace MKGo.iOS
@@ -16,37 +18,35 @@ namespace MKGo.iOS
     {
         public SQLite_iOS() { }
 
-        public static string DatabaseFilePath { get
+		private static string DatabaseFileName
+		{
+			get
+			{
+				return "MKGoSQLite.db3";
+			}
+		}
+
+        private static string DatabaseFilePath 
+		{ 
+			get
             {
-                var sqliteFilename = "MKGoSQLite.db3";
-                string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
-                string libraryPath = Path.Combine(documentsPath, "..", "Library"); // Library folder
-                var path = Path.Combine(libraryPath, sqliteFilename);
+                string documentsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                string dbFolderPath = Path.Combine(documentsFolderPath, "..", "Library", "Databases");
+
+				if (!Directory.Exists(dbFolderPath))
+				{
+					Directory.CreateDirectory(dbFolderPath);
+				}
+
+                var path = Path.Combine(dbFolderPath, DatabaseFileName);
                 return path;
-            }
-        }
-
-        public static string SeedFile
-        {
-            get {
-                return "MKGoSQLite.db3";
-            }
-        }
-
-        public static void copyDatabase(string appdir)
-        {
-            var seedFile = Path.Combine(appdir, SeedFile);
-            if (!File.Exists(DatabaseFilePath))
-            {
-                File.Copy(SeedFile, DatabaseFilePath);
             }
         }
 
         public SQLiteConnection GetConnection()
         {
-            // Create the connection
+			// will create the database, if not existant yet
             var conn = new SQLiteConnection(new SQLitePlatformIOS(), DatabaseFilePath);
-            // Return the database connection
             return conn;
         }
     }
