@@ -25,6 +25,7 @@ namespace MKGo.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
 			Forms.Init();
+			ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 
             LoadApplication(new App());
 
