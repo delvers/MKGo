@@ -51,11 +51,8 @@ namespace MKGo
                     return "test";
                 }
 
-                var filename = "item" + InventoryNumber.Replace(".", "") + "1.jpg";
-                var source = Device.OnPlatform(
-                iOS: ImageSource.FromFile("Images/"+filename),
-                Android: ImageSource.FromFile(filename),
-                WinPhone: ImageSource.FromFile("Images/"+filename));
+                var filename = "MKGo.EmbeddedResources.item" + InventoryNumber.Replace(".", "") + "1.jpg";
+				var source = ImageSource.FromResource(filename);
                 return source;
             }
         }
