@@ -37,13 +37,7 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
-    <BundleAssemblies>False</BundleAssemblies>
-    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <Debugger>Xamarin</Debugger>
-    <AotAssemblies>False</AotAssemblies>
-    <EnableLLVM>False</EnableLLVM>
-    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
-    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -190,54 +184,54 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MKGo\MKGo.csproj">
-      <Project>{8fff1925-d829-4e2b-b6b3-ac39824ddbec}</Project>
+      <Project>{33802C7A-0F10-4B40-8FF6-EAA7F9A9A749}</Project>
       <Name>MKGo</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\ic_info_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_info.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\ic_info_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_info.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\ic_info_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_info.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\ic_info_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_info.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_info_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_info.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\ic_collections_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_collections.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\ic_collections_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_collections.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_collections_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_collections.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\ic_collections_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_collections.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\ic_collections_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_collections.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\ic_map_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_map.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\ic_map_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_map.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\ic_map_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_map.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\ic_map_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_map.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_map_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_map.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\splash_screen.xml">

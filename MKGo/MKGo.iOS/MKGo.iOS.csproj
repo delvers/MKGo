@@ -190,31 +190,31 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_collections_36pt.png" />
+    <BundleResource Include="Resources\ic_collections.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_collections_36pt_2x.png" />
+    <BundleResource Include="Resources\ic_collections%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_collections_36pt_3x.png" />
+    <BundleResource Include="Resources\ic_collections%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ic_info.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_info_2x.png" />
+    <BundleResource Include="Resources\ic_info%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_info_3x.png" />
+    <BundleResource Include="Resources\ic_info%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_map_36pt.png" />
+    <BundleResource Include="Resources\ic_map.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_map_36pt_2x.png" />
+    <BundleResource Include="Resources\ic_map%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_map_36pt_3x.png" />
+    <BundleResource Include="Resources\ic_map%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\item1984447b1.jpg" />

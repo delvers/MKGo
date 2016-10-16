@@ -15,19 +15,19 @@ namespace MKGo
             masterPageItems.Add(new MasterPageItem
             {
                 Title = "Map",
-                IconSource = "ic_map_black_36dp.png",
+                IconSource = "ic_map.png",
                 TargetType = typeof(MapPage)
             });
             masterPageItems.Add(new MasterPageItem
             {
                 Title = "My Collection",
-                IconSource = "ic_collections_black_36dp.png",
+                IconSource = "ic_collections.png",
                 TargetType = typeof(CollectionPage)
             });
             masterPageItems.Add(new MasterPageItem
             {
                 Title = "About",
-                IconSource = "ic_info_black_24dp.png",
+                IconSource = "ic_info.png",
                 TargetType = typeof(AboutPage)
             });
 
