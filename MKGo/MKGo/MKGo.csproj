@@ -85,6 +85,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmbeddedResources\item191921.jpg" />
+    <EmbeddedResource Include="EmbeddedResources\item1928421.jpg" />
+    <EmbeddedResource Include="EmbeddedResources\item1949401.jpg" />
+    <EmbeddedResource Include="EmbeddedResources\item19621261.jpg" />
+    <EmbeddedResource Include="EmbeddedResources\item1962411.jpg" />
+    <EmbeddedResource Include="EmbeddedResources\item1973431.jpg" />
+    <EmbeddedResource Include="EmbeddedResources\item19801741.jpg" />
+    <EmbeddedResource Include="EmbeddedResources\item19811731.jpg" />
+    <EmbeddedResource Include="EmbeddedResources\item1984447b1.jpg" />
+    <EmbeddedResource Include="EmbeddedResources\item19893491.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -187,6 +197,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EmbeddedResources\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
