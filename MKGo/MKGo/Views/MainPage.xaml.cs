@@ -7,6 +7,7 @@ namespace MKGo
     {
         public MainPage()
         {
+
             InitializeComponent();
 
             masterPage.ListView.ItemSelected += OnItemSelected;

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Display;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -19,7 +20,12 @@ namespace MKGo.UWP
     {
         public MainPage()
         {
+
             this.InitializeComponent();
+
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
+
+            ZXing.Net.Mobile.Forms.WindowsUniversal.ZXingScannerViewRenderer.Init();
 
             LoadApplication(new MKGo.App());
         }

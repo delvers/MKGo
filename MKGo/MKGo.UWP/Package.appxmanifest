@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="961a99d6-6c5a-49ea-a8c6-273a7fb0120b" Publisher="CN=joaqu" Version="0.1.2.0" />
+  <Identity Name="961a99d6-6c5a-49ea-a8c6-273a7fb0120b" Publisher="CN=David" Version="0.1.13.0" />
   <mp:PhoneIdentity PhoneProductId="961a99d6-6c5a-49ea-a8c6-273a7fb0120b" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>MKGo.UWP</DisplayName>
@@ -24,5 +24,6 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <DeviceCapability Name="webcam" />
   </Capabilities>
 </Package>

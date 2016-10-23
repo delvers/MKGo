@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace MKGo
 {
@@ -23,6 +24,8 @@ namespace MKGo
 
         public string Author { get; set; }
 
+        public string MapFile { get; set; }
+
         [ForeignKey(typeof(Exhibition))]
         public int ExhibitionId { get; set; }
 
@@ -32,6 +35,27 @@ namespace MKGo
         [ManyToMany(typeof(TourItem))]
         public List<Item> Items { get; set; }
 
+        [Ignore]
+        public ImageSource MapSource
+        {
+            get
+            {
+                string filepath;
+                if (MapFile == null)
+                {
+                    filepath = "defaultmap.png";
+                }
+                else
+                {
+                    filepath = MapFile;
+                }
+
+                var filename = "MKGo.EmbeddedResources.item" + filepath;
+                var source = ImageSource.FromResource(filename);
+                return source;
+            }
+
+        }
     }
 
     public class TourItem
