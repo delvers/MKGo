@@ -52,15 +52,15 @@ namespace MKGo
 
             if (Device.OS == TargetPlatform.iOS)
             {
-                tbi = new ToolbarItem("+", null, openScanner, 0, 0);
+                tbi = new ToolbarItem("+", "ic_fullscreen_black.png", openScanner, 0, 0);
             }
             if (Device.OS == TargetPlatform.Android)
             { // BUG: Android doesn't support the icon being null
-                tbi = new ToolbarItem("+", "plus", openScanner, 0, 0);
+                tbi = new ToolbarItem("+", "ic_fullscreen_black.png", openScanner, 0, 0);
             }
             if (Device.OS == TargetPlatform.WinPhone || Device.OS == TargetPlatform.Windows)
             {
-                tbi = new ToolbarItem("Add", "add.png", openScanner, 0, 0);
+                tbi = new ToolbarItem("Add", "ic_fullscreen_black.png", openScanner, 0, 0);
             }
 
             ToolbarItems.Add(tbi);
