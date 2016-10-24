@@ -8,7 +8,10 @@ namespace MKGo
         public MainPage()
         {
 
+
             InitializeComponent();
+            var tbi = new ToolbarItem("Score: "+ Settings.Score, "score.png", ()=> { DisplayAlert("Score",Settings.Score.ToString(),"OK"); } , 0, 0);
+            ToolbarItems.Add(tbi);
 
             masterPage.ListView.ItemSelected += OnItemSelected;
 

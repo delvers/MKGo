@@ -24,6 +24,9 @@ namespace MKGo
     private const string CurrentTourKey = "currentTour";
     private static readonly int CurrentTourDefault = -1;
 
+    private const string ScoreKey = "Score";
+    private static readonly int ScoreDefault = 0;
+
     #endregion
 
 
@@ -39,6 +42,21 @@ namespace MKGo
       }
     }
 
-
+    public static int Score
+    {
+        get
+        {
+            return AppSettings.GetValueOrDefault<int>(ScoreKey, ScoreDefault);
+        }
+        set
+        {
+            AppSettings.AddOrUpdateValue<int>(ScoreKey, value);
+        }
+    }
+    public static int inceaseScore()
+    {
+        Score += 1;
+        return Score;
+    }
   }
 }

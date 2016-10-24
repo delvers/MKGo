@@ -53,6 +53,8 @@ namespace MKGo
                     collectioItem.collected = true;
                     collectioItem.Item = item;
                     database.InsertWithChildren(collectioItem);
+
+                    Settings.inceaseScore();
                 }
             }
             return item;
