@@ -14,65 +14,63 @@ namespace MKGo
             var scroll = new ScrollView
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.Fill,
+                VerticalOptions = LayoutOptions.Start,
             };
+
             MapLayout = new AbsoluteLayout
             {
-                HorizontalOptions = LayoutOptions.Fill,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.Fill,
             };
             
             var Map = new Image {
-                Aspect = Aspect.Fill,
+                Aspect = Aspect.AspectFill,
                 Source = ImageSource.FromResource("MKGo.EmbeddedResources.defaultmap.png"),
+                HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.Fill,
-                HorizontalOptions = LayoutOptions.Fill,
                 
             };
 
-            
-            //Map.WidthRequest = MapLayout.Width;
-
-            //double scale = scroll.WidthRequest / Map.WidthRequest;
-            var mapGrid = new Grid()
+            var MapGrid = new Grid
             {
-                HorizontalOptions = LayoutOptions.Fill,
-                VerticalOptions = LayoutOptions.Fill
-            };  // workarround for bug 36097 (https://bugzilla.xamarin.com/show_bug.cgi?id=36097)
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
 
+            };
+            MapGrid.Children.Add(Map);
 
-            mapGrid.Children.Add(Map);
-            //AbsoluteLayout.SetLayoutBounds(mapGrid, new Rectangle(0, 0, 1, AbsoluteLayout.AutoSize));
-            //AbsoluteLayout.SetLayoutFlags(mapGrid, AbsoluteLayoutFlags.XProportional);
-            //AbsoluteLayout.SetLayoutFlags(mapGrid, AbsoluteLayoutFlags.WidthProportional);
+            var MapContainer = new AspectRatioContainer
+            {
+                Content = MapGrid,
+                AspectRatio = 1.5894,
+            };
+
+            AbsoluteLayout.SetLayoutBounds(MapContainer, new Rectangle(0, 0, 1, AbsoluteLayout.AutoSize));
+            AbsoluteLayout.SetLayoutFlags(MapContainer, AbsoluteLayoutFlags.WidthProportional);
 
             var obj1 = new Image
             {
                 Aspect = Aspect.AspectFill,
-                Source = "testIcon.png",
+                Source = ImageSource.FromResource("MKGo.EmbeddedResources.vaseicon.png"),
                 VerticalOptions = LayoutOptions.Start
             };
 
-            //var ScaleLable = new Label { Text = scale.ToString() + ", "+ Content.Width.ToString() +", "+ Map.WidthRequest.ToString() };
-
-
             var objGrid = new Grid();  // workarround for bug 36097 (https://bugzilla.xamarin.com/show_bug.cgi?id=36097)
             objGrid.Children.Add(obj1);
-            AbsoluteLayout.SetLayoutBounds(objGrid, new Rectangle(0.5, 100, 50, 50));
+            AbsoluteLayout.SetLayoutBounds(objGrid, new Rectangle(0.6, 200, 30, AbsoluteLayout.AutoSize));
             AbsoluteLayout.SetLayoutFlags(objGrid, AbsoluteLayoutFlags.XProportional);
 
             var tapImage = new TapGestureRecognizer();
-            tapImage.Tapped += tapImage_Tapped;
+            tapImage.Tapped += openItem(App.Items.GetItem(3));
             obj1.GestureRecognizers.Add(tapImage);
-            MapLayout.Children.Add(new AspectRatioContainer
-            {
-                Content = mapGrid,
-                AspectRatio = 1.5894
-            });
+
+            MapLayout.Children.Add(MapContainer);
             MapLayout.Children.Add(objGrid);
+
             //MapLayout.Children.Add(ScaleLable);
-            scroll.Content = MapLayout;
-            Content = scroll;
+            //scroll.Content = MapLayout;
+            //Content = scroll;
+            Content = MapLayout;
         }
 
         protected override void OnAppearing()
@@ -84,10 +82,16 @@ namespace MKGo
             BindingContext = App.GetCurrentTour();
             
         }
-        
-        void tapImage_Tapped(object sender, EventArgs e)
+
+        EventHandler openItem(Item item)
         {
-            DisplayAlert("Alert", "Tapped Object!", "OK");
+            return (object sender, EventArgs e) =>
+            {
+                var itemPage = new ItemPage();
+                itemPage.BindingContext = item;
+                Navigation.PushAsync(itemPage);
+                //DisplayAlert("Alert", item.Title, "OK");
+            };
         }
     }
 
@@ -95,8 +99,12 @@ namespace MKGo
     {
         protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)
         {
+            //return base.OnMeasure(widthConstraint, widthConstraint * this.AspectRatio);
+            //HeightRequest = widthConstraint * this.AspectRatio;
             return new SizeRequest(new Size(widthConstraint, widthConstraint * this.AspectRatio));
         }
+        
+
         public double AspectRatio { get; set; }
     }
 }
