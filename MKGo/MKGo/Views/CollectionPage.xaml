@@ -6,17 +6,9 @@
   <ListView x:Name="listView" ItemSelected="listItemSelected">
     <ListView.ItemTemplate>
       <DataTemplate>
-        <ViewCell>
-          <ViewCell.View>
-            <StackLayout Padding="20,0,20,0"
-                         Orientation="Horizontal"
-                         HorizontalOptions="FillAndExpand">
-              <Label Text="{Binding Item.Title}"
-                     VerticalTextAlignment="Center"
-                     HorizontalOptions="StartAndExpand"/>
-            </StackLayout>
-          </ViewCell.View>
-        </ViewCell>
+        <ImageCell Text ="{Binding Item.Title}"
+                   ImageSource="{Binding Item.IconSource}">
+        </ImageCell>
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>

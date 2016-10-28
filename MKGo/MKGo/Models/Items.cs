@@ -56,6 +56,22 @@ namespace MKGo
                 return source;
             }
         }
+
+        [Ignore]
+        public ImageSource IconSource
+        {
+            get
+            {
+                if (InventoryNumber == null)
+                {
+                    return "test";
+                }
+
+                var filename = "MKGo.EmbeddedResources.item" + InventoryNumber.Replace(".", "") + "1_small.jpg";
+                var source = ImageSource.FromResource(filename);
+                return source;
+            }
+        }
     }
 
     public class Items : AbstractModel<Item>{}
