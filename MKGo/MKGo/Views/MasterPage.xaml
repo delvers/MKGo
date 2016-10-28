@@ -7,7 +7,6 @@
 			 Title="MKGo">
   <ContentPage.Content>
     <StackLayout VerticalOptions="FillAndExpand">
-      <Label Text="Navigation" HorizontalOptions="Center" />
       <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
         <ListView.ItemTemplate>
           <DataTemplate>

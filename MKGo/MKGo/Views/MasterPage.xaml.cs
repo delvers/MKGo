@@ -14,19 +14,19 @@ namespace MKGo
             var masterPageItems = new List<MasterPageItem>();
             masterPageItems.Add(new MasterPageItem
             {
-                Title = "Map",
+                Title = "Karte",
                 IconSource = "ic_map.png",
                 TargetType = typeof(MapPage)
             });
             masterPageItems.Add(new MasterPageItem
             {
-                Title = "My Collection",
+                Title = "Meine Sammlung",
                 IconSource = "ic_collections.png",
                 TargetType = typeof(CollectionPage)
             });
             masterPageItems.Add(new MasterPageItem
             {
-                Title = "About",
+                Title = "Impressum",
                 IconSource = "ic_info.png",
                 TargetType = typeof(AboutPage)
             });

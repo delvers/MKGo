@@ -9,7 +9,7 @@ namespace MKGo
         private AbsoluteLayout MapLayout;
         public MapPage()
         {
-            Title = "Map";
+            Title = "Karte";
 
             var scroll = new ScrollView
             {
