@@ -155,6 +155,7 @@ namespace MKGo
                 var tour = new Tour();
                 tour.Author = "no one";
                 tour.Title = "Begegnungen mit dem Fremden";
+                tour.Description = "Eine Tour durch die Antike.";
                 tour.MapFile = "item19893491.jpg";
                 tour.Exhibition = exhibition;
                 tour.Items = items;

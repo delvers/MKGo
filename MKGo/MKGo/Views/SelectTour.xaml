@@ -2,21 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MKGo.SelectTour">
-  <ListView x:Name="listView" ItemSelected="listItemSelected">
+  <StackLayout>
+  <Label Text="Wähle deine Tour..."
+       HorizontalTextAlignment="Center"
+         FontSize="Large"
+         FontAttributes="Bold"/>
+  <ListView x:Name="listView" ItemSelected="listItemSelected" RowHeight="210">
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-        <ViewCell.View>
-          <StackLayout Padding="20,0,20,0"
-                       Orientation="Horizontal"
-                       HorizontalOptions="FillAndExpand">
+          <StackLayout Orientation="Vertical"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand">
+
+            <Image HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="CenterAndExpand"
+                   Source="{Binding IconSource}"/>
             <Label Text="{Binding Title}"
                      VerticalTextAlignment="Center"
-                     HorizontalOptions="StartAndExpand"/>
+                     HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand"
+                     FontSize = "Large"/>
           </StackLayout>
-        </ViewCell.View>
         </ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>
+  </StackLayout>
 </ContentPage>

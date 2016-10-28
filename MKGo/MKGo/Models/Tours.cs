@@ -24,6 +24,15 @@ namespace MKGo
 
         public string Author { get; set; }
 
+        [Ignore]
+        public ImageSource IconSource { get
+            {
+                var filename = "MKGo.EmbeddedResources.antike.png";
+                var source = ImageSource.FromResource(filename);
+                return source;
+            }
+        }
+
         public string MapFile { get; set; }
 
         [ForeignKey(typeof(Exhibition))]
