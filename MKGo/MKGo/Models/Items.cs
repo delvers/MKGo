@@ -19,6 +19,18 @@ namespace MKGo
 
         public string Title { get; set; }
 
+        public string Detail { get; set; }
+
+        public string Detail_en { get; set; }
+
+        public string Material { get; set; }
+
+        public string Findspot { get; set; }
+
+        public string Creationdate { get; set; }
+
+        public string Era { get; set; }
+
         public string InventoryNumber { get; set; }
 
         [MaxLength(600)]

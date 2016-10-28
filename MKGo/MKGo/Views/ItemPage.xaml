@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MKGo.ItemPage"
-             Title="{Binding Title}">
+             Title="{Binding Detail}">
   <ContentPage.Content>
     <ScrollView>
       <StackLayout VerticalOptions="StartAndExpand" Padding="20">
-        <Label Text="{Binding Title}"/>
+        <Label Text="{Binding Title}" FontAttributes="Bold"/>
         <!-- <Entry x:Name="titleEntry" Text="{Binding Title}"/>-->
         <!-- <Label Text="{Binding ImageSource}"/>-->
         <Image Source="{Binding ImageSource}" />

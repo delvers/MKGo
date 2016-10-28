@@ -76,9 +76,6 @@ namespace MKGo
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            var tour = App.GetCurrentTour();
-            tour.MapFile = "item191921.jpg";
             BindingContext = App.GetCurrentTour();
             
         }

@@ -7,6 +7,7 @@
     <ListView.ItemTemplate>
       <DataTemplate>
         <ImageCell Text ="{Binding Item.Title}"
+                   Detail="{Binding Item.Detail}"
                    ImageSource="{Binding Item.IconSource}">
         </ImageCell>
       </DataTemplate>
