@@ -63,7 +63,6 @@ namespace MKGo
                 var source = ImageSource.FromResource(filename);
                 return source;
             }
-
         }
     }
 

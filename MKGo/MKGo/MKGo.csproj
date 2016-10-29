@@ -40,6 +40,7 @@
     </Compile>
     <Compile Include="ImageHandler.cs" />
     <Compile Include="Models\IModel.cs" />
+    <Compile Include="Models\Map.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\CollectionItem.cs" />
     <Compile Include="Models\Database.cs" />

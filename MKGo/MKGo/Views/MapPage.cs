@@ -7,80 +7,121 @@ namespace MKGo
     {
 
         private AbsoluteLayout MapLayout;
+
         public MapPage()
         {
             Title = "Karte";
-
-            var scroll = new ScrollView
-            {
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.Start,
-            };
 
             MapLayout = new AbsoluteLayout
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.Fill,
             };
-            
-            var Map = new Image {
+
+            Map map = Map.exampleMap();
+
+            renderTile(map.StartTile);
+
+            Content = MapLayout;
+        }
+
+        // renders MapTile
+        protected void renderTile(MapTile tile)
+        {
+            // load background
+            var mapBackground = getMapBackground(tile.ImageSource);
+            MapLayout.Children.Add(mapBackground);
+
+            // load navigation buttons
+            if (tile.hasPrevTile()) {
+                var prevTileButton = getMapElement(tile.PrevButtonPosition, "ic_arrow_down.png", loadTile(tile.PrevTile));
+                MapLayout.Children.Add(prevTileButton);
+            }
+            if (tile.hasNextTile()) {
+                var nextTileButton = getMapElement(tile.NextButtonPosition, "ic_arrow_up.png", loadTile(tile.NextTile));
+                MapLayout.Children.Add(nextTileButton);
+            }
+
+            // load items
+            var itemOne = getItemView(App.Items.GetItem(3));
+            MapLayout.Children.Add(itemOne);
+        }
+
+        // returns view for the map image
+        protected View getMapBackground(ImageSource imageSource)
+        {
+            var mapBackground = new Image
+            {
                 Aspect = Aspect.AspectFill,
-                Source = ImageSource.FromResource("MKGo.EmbeddedResources.defaultmap.png"),
+                Source = imageSource,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.Fill,
-                
+
             };
 
-            var MapGrid = new Grid
+            var mapBgView = new Grid
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
 
             };
-            MapGrid.Children.Add(Map);
+            mapBgView.Children.Add(mapBackground);
 
-            var MapContainer = new AspectRatioContainer
+            var MapBgContainer = new AspectRatioContainer
             {
-                Content = MapGrid,
+                Content = mapBgView,
                 AspectRatio = 1.5894,
             };
+            return MapBgContainer;
+        }
 
-            AbsoluteLayout.SetLayoutBounds(MapContainer, new Rectangle(0, 0, 1, AbsoluteLayout.AutoSize));
-            AbsoluteLayout.SetLayoutFlags(MapContainer, AbsoluteLayoutFlags.WidthProportional);
+        // return map element for specific item
+        protected View getItemView(Item item)
+        {
+            Double[] pos = {0.6, 300};
+            return getMapElement(pos, ImageSource.FromResource("MKGo.EmbeddedResources.vaseicon.png"), openItem(item));
+        }
 
-            var obj1 = new Image
+        // generates itemIcon for the right position and with on tab event
+        protected View getMapElement(Double[] position, ImageSource iconSource, EventHandler action)
+        {
+            var itemIcon = new Image
             {
                 Aspect = Aspect.AspectFill,
-                Source = ImageSource.FromResource("MKGo.EmbeddedResources.vaseicon.png"),
+                Source = iconSource,
                 VerticalOptions = LayoutOptions.Start
             };
 
-            var objGrid = new Grid();  // workarround for bug 36097 (https://bugzilla.xamarin.com/show_bug.cgi?id=36097)
-            objGrid.Children.Add(obj1);
-            AbsoluteLayout.SetLayoutBounds(objGrid, new Rectangle(0.6, 200, 30, AbsoluteLayout.AutoSize));
-            AbsoluteLayout.SetLayoutFlags(objGrid, AbsoluteLayoutFlags.XProportional);
+            var itemView = new Grid();  // workarround for bug 36097 (https://bugzilla.xamarin.com/show_bug.cgi?id=36097)
+            itemView.Children.Add(itemIcon);
+            AbsoluteLayout.SetLayoutBounds(itemView, new Rectangle(position[0], position[1], 30, AbsoluteLayout.AutoSize));
+            AbsoluteLayout.SetLayoutFlags(itemView, AbsoluteLayoutFlags.XProportional);
 
-            var tapImage = new TapGestureRecognizer();
-            tapImage.Tapped += openItem(App.Items.GetItem(3));
-            obj1.GestureRecognizers.Add(tapImage);
+            var tapIcon = new TapGestureRecognizer();
+            tapIcon.Tapped += action;
+            itemIcon.GestureRecognizers.Add(tapIcon);
 
-            MapLayout.Children.Add(MapContainer);
-            MapLayout.Children.Add(objGrid);
-
-            //MapLayout.Children.Add(ScaleLable);
-            //scroll.Content = MapLayout;
-            //Content = scroll;
-            Content = MapLayout;
+            return itemView;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
             BindingContext = App.GetCurrentTour();
-            
         }
 
-        EventHandler openItem(Item item)
+        // creates EventHandler to load new Map Tile
+        protected EventHandler loadTile(MapTile tile)
+        {
+            return (object sender, EventArgs e) =>
+            {
+                MapLayout.Children.Clear();
+                renderTile(tile);
+            };
+        }
+
+        // creates EventHandler for taping ItemIcons
+        protected EventHandler openItem(Item item)
         {
             return (object sender, EventArgs e) =>
             {
@@ -92,6 +133,8 @@ namespace MKGo
         }
     }
 
+
+    // used to scale Images
     public class AspectRatioContainer : ContentView
     {
         protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)
