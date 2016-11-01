@@ -55,14 +55,14 @@ namespace MKGo
                 Aspect = Aspect.AspectFill,
                 Source = imageSource,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.Fill,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
 
             };
 
             var mapBgView = new Grid
             {
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
 
             };
             mapBgView.Children.Add(mapBackground);
@@ -70,8 +70,12 @@ namespace MKGo
             var MapBgContainer = new AspectRatioContainer
             {
                 Content = mapBgView,
-                AspectRatio = 1.5894,
+                AspectRatio = 1.454545,
             };
+
+            AbsoluteLayout.SetLayoutBounds(MapBgContainer, new Rectangle(0,0,1,AbsoluteLayout.AutoSize));
+            AbsoluteLayout.SetLayoutFlags(MapBgContainer, AbsoluteLayoutFlags.WidthProportional);
+
             return MapBgContainer;
         }
 
@@ -94,7 +98,7 @@ namespace MKGo
 
             var itemView = new Grid();  // workarround for bug 36097 (https://bugzilla.xamarin.com/show_bug.cgi?id=36097)
             itemView.Children.Add(itemIcon);
-            AbsoluteLayout.SetLayoutBounds(itemView, new Rectangle(position[0], position[1], 30, AbsoluteLayout.AutoSize));
+            AbsoluteLayout.SetLayoutBounds(itemView, new Rectangle(position[0], position[1], 40, AbsoluteLayout.AutoSize));
             AbsoluteLayout.SetLayoutFlags(itemView, AbsoluteLayoutFlags.XProportional);
 
             var tapIcon = new TapGestureRecognizer();

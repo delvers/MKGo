@@ -20,18 +20,29 @@ namespace MKGo
         {
             var startTile = new MapTile()
             {
-                ImageSource = ImageSource.FromResource("MKGo.EmbeddedResources.defaultmap.png")
+                ImageSource = ImageSource.FromResource("MKGo.EmbeddedResources.tile1-10zu16.png"),
+                NextButtonPosition = new Double[] { 0.315, 20 },
             };
 
             var secondTile = new MapTile()
             {
-                ImageSource = ImageSource.FromResource("MKGo.EmbeddedResources.defaultmap.png"),
+                ImageSource = ImageSource.FromResource("MKGo.EmbeddedResources.tile2-10zu16.png"),
                 PrevTile = startTile,
-                PrevButtonPosition = new Double[] { 0.5, 400}
+                PrevButtonPosition = new Double[] { 0.315, 500},
+                NextButtonPosition = new Double[] {0.315, 20}
             };
 
             startTile.NextTile = secondTile;
-            startTile.NextButtonPosition = new Double[] { 0.45, 20};
+
+            var thirdTile = new MapTile()
+            {
+                ImageSource = ImageSource.FromResource("MKGo.EmbeddedResources.tile3-10zu16.png"),
+                PrevTile = secondTile,
+                PrevButtonPosition = new Double[] {0.315, 500},
+            };
+
+            secondTile.NextTile = thirdTile;
+
 
             var map = new Map()
             {
