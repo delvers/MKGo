@@ -1,4 +1,4 @@
-﻿using SQLite;
+using SQLite;
 using SQLite.Net;
 using SQLiteNetExtensions.Extensions;
 using System;
@@ -66,7 +66,7 @@ namespace MKGo
                 vase.Title = "Schnurösengefäß mit Schiffsdarstellung";
                 vase.Detail = "Datenautobahn Nil";
                 vase.Detail_en = "Data Highway Nile";
-                vase.Description = "Auf den Schnurösengefäßen der vor-pharaonischen Zeit finden sich immer wieder Szenen mit vielrudrigen Schiffen. Das eiförmige Gefäß zeigt auf beiden Seiten jeweils ein Schiff. Das Schiff besitzt Kabinen, am Bug einen Zweig, dahinter Standarten. Am Gefäßfuß sind drei Bäume dargestellt. Es handelt sich um ein frühes Nilpanorama.";
+                vase.Description = "Auf dieser Vase ist die abstrakte Darstellung eines Schiffes zu sehen. Die Abbildung gibt Auskunft darüber, wie die alten Ägypter sich mit Menschen aus weit entfernten Gebieten ausgetauscht haben - über den Seeweg. Der Nil war nicht nur Handelsstraße, sondern auch so etwas wie eine Datenautobahn, auf der Informationen viel schneller verschickt werden konnten als über Land.";
                 vase.Creationdate = "um 3300-3100 v. Chr. (Negade II, prädynastisch)";
                 vase.Findspot = "Ägypten";
                 vase.Material = "Ton";
@@ -78,9 +78,9 @@ namespace MKGo
 
                 var tonfiguren = new Item();
                 tonfiguren.Title = "Harpokrates";
-                tonfiguren.Detail = "Mein Gott, Dein Gott";
-                tonfiguren.Detail_en = "My God, Your God";
-                tonfiguren.Description = "Der auf einer mehrfach profilierten Basis stehende Gott Harpokrates ist lediglich mit dem ägyptischen Nemes-Tuch, dem Kopftuch der Pharaonen, bekleidet. An eine Säule gelehnt, hält er in seinem angewinkelten linken Arm eine kleine Keule. Den Zeigefinger der rechten Hand führt er zum Mund. Die Figur zählt zur Gruppe der sog. Fayum-Terrakotten. In Alexandria, dem internationalen, griechisch geprägten Zentrum Ägyptens, lebt eine multikulturelle Gesellschaft aus Ägyptern, Orientalen, Griechen, Römern, Juden und anderen, deren unterschiedliche religiöse Vorstellungen sich allmählich vermischen. Einblicke in diese Glaubenswelt erlauben die sog. Fayum-Terrakotten. Sie sind Teil des religiösen Haushaltes, Kinderspielzeug, \"Nippesfiguren\", aber auch Kultsymbole, Grabbeigaben, Wallfahrtsbilder, Votivgaben und magische Objekte zur Bannung böser Mächte. Man findet sie in Häusern, Gräbern und Heiligtümern.";
+                tonfiguren.Detail = "Mein Gott! Dein Gott!";
+                tonfiguren.Detail_en = "My God! Your God!";
+                tonfiguren.Description = "Die Tonfigur des Gottes Harpokrates zeigt, wie Griechen den altägyptischen Horuskind-Gott in ihren Glauben übernahmen. In Alexandria lebte eine multikulturelle Gesellschaft aus Ägyptern, Orientalen, Griechen, Römern, Juden und anderen, deren unterschiedliche religiöse Vorstellungen sich allmählich vermischten. Die Figuren dienten als Kinderspielzeug, aber auch Kultsymbole, Grabbeigaben und magische Objekte zur Bannung böser Mächte.";
                 tonfiguren.Creationdate = "1.-2. Jahrhundert n. Chr.";
                 tonfiguren.Findspot = "Ägypten";
                 tonfiguren.Material = "Ton";
@@ -95,7 +95,7 @@ namespace MKGo
                 mumienporträt.Title = "Mumienporträt einer Frau";
                 mumienporträt.Detail = "Vernetzte Traditionen";
                 mumienporträt.Detail_en = "Connected Traditions";
-                mumienporträt.Description = "Mumienporträts, mit Wachsfarben oder in Tempera-Technik ausgeführt, sind zu Hunderten im Fayum, einer Oase etwa 70 km südlich von Kairo, sowie in Mittel- und Oberägypten gefunden worden. Diese aus Holztafeln aus Zypresse, Linde oder Zeder gemalten Bilder wurden mit langen Mumienbinden über dem Gesicht der Verstorbenen befestigt. Von der frühen Kaiserzeit bis um 400 n. Chr. vermitteln sie ein eindringliches Bild vom Aussehen der Bevölkerung des Nillandes, die sich aus Ägyptern, Orientalen, Griechen, Juden und Römern zusammensetzte. Über die Auftraggeber informieren die Bildnisse selbst. Es ist die gehobene Bürgerschicht von Offizieren, Beamten, Kaufleuten und Priestern. Die Bildnisse informieren über Moden, Frisuren, Schmuck und anderes.";
+                mumienporträt.Description = "Wie kommt das Bild einer römischen Frau auf ein ägyptisches Mumienporträt? Solche Mumienporträts geben uns ein aufschlussreiches Bild vom Aussehen der Bevölkerung des Nillandes. Sie zeigen auch, dass dort lebende Orientalen, Griechen, Juden und Römer die ägyptische Tradition übernommen haben, bei der auf Holztafeln gemalte Bilder mit langen Mumienbinden über dem Gesicht der Verstorbenen befestigt wurden. Die Bildnisse von Beamten, Offizieren, Kaufleuten und Priestern der gehobene Bürgerschicht informieren auch über Moden, Frisuren, Schmuck und anderes.";
                 mumienporträt.Creationdate = "spätes 2. Jahrhundert n. Chr.";
                 mumienporträt.Findspot = "Ägypten (Er-Rubayat (Fayum))";
                 mumienporträt.Material = "Holz";
@@ -107,10 +107,10 @@ namespace MKGo
                 items.Add(mumienporträt);
 
                 var perserkanne = new Item();
-                perserkanne.Title = "Oinochoe ('Eurymedon-Kanne' oder 'Perser-Kanne')";
-                perserkanne.Detail = "Nackter Barbare";
-                perserkanne.Detail_en = "Naked Barbarian";
-                perserkanne.Description = "Die Oinochoe trägt wohl eine der bedeutendsten Darstellungen griechischer Vasenkunst, die einen historischen Bezug aufweisen. Auf Seite A ist ein nach rechts laufender Grieche dargestellt. Der im Profil gezeigte Kopf weist einen Spitzbart sowie eine Bartpartie an der Wange auf. Er ist mit einem nach hinten wehenden Mäntelchen bekleidet, dessen Enden vor der Brust verknotet sind. Während der linke Arm vorgestreckt ist, hält er mit seiner angewinkelten Rechten seinen Phallus. Aus seinem Mund kommt die Inschrift 'Eurymedon eimi. Kybade Hekaste' ('Ich bin Eurymedon. ...') hervor, die schräg nach unten verlaufend zur Figur auf Seite B vermittelt. Dort steht ein nach vorn übergebeugter Mann in einem langen Jacken-Hosen-Kostüm, den Kopf frontal dem Betrachter zugewandt, die Hände beidseits des Kopfes in einem Schreckensgestus erhoben. An seinem linken Arm baumelt ein Gorytos (Pfeilköcher) mit Bogen herab. Auf dem Kopf trägt er eine sog. Phrygische Mütze, die ihn in Verbindung mit seinem Gewand als Orientalen kennzeichnet. Beide Figuren stehen auf einer umlaufenden tongrundigen Linie; oben wird das Bild von einem schmalen Mäanderband am Übergang zum Hals abgeschlossen. Der Name 'Eurymedon' erlaubt eine Deutung der Szene: An dem gleichnamigen kleinasiatischen Fluss (in der Nähe des heutigen Antalya) gelang dem Attisch-Delischen Seebund unter der Führung Athens und seines Strategen Kimon 469 oder 466 v. Chr. in einer Doppelschlacht zu Lande und zu Wasser ein umfänglicher Sieg. Der Sieg wird auf dieser Kanne brutal und erniedrigend dargestellt, wird doch in der nächsten Sekunde der Grieche den Perser erreicht haben und ihn sexuell missbrauchen. Wieso wird ein solcher Sieg in dieser Weise dargestellt? Warum ist der Grieche eher unkonventionell, geradezu halb-barbarisch gezeigt? Vermutlich steht die Darstellung in Verbindung mit einem possenhaften Theaterstück.";
+                perserkanne.Title = "Oinochoe ('Perser-Kanne')";
+                perserkanne.Detail = "Wer ist hier der Wilde?";
+                perserkanne.Detail_en = "Who is the wildling here?";
+                perserkanne.Description = "Ein nackter Mann fasst sich ungeniert an sein Gemächt. Es handelt sich hier nicht um eine freizügige Abbildung der Lust, sondern um eine der bedeutendsten Darstellungen griechischer Vasenkunst mit historischem Bezug. Mit seinem Penis in der Hand läuft der Grieche auf einen orientalisch gekleideten Mann zu, der sich sichtlich davor erschreckt. Hier wird der Sieg einer Schlacht gegen die Perser erniedrigend dargestellt. Die Szene wirkt, als würde der Grieche den Perser in der nächsten Sekunde erreicht haben und ihn sexuell missbrauchen. Eine vulgäre, zügellose Sexualität, die oft dem Fremden zugeschrieben wird, findet sich hier im eigenen Verhalten wieder.";
                 perserkanne.Creationdate = "um 460 v. Chr.";
                 perserkanne.Findspot = "Athen";
                 perserkanne.Material = "Ton";
@@ -125,7 +125,7 @@ namespace MKGo
                 afrikanerkopf.Title = "Kännchen in Form eines Afrikanerkopfes";
                 afrikanerkopf.Detail = "Exotik im Kopf";
                 afrikanerkopf.Detail_en = "Exotic in the Head";
-                afrikanerkopf.Description = "Das Kännchen hat einen schlanken, hohen Hals mit Kleeblattausguss und einen hohen Henkel. Diese Partien sind außen und innen schwarz gefirnisst; um das untere Ende des Halses zieht sich ein heller Perlfries. Der Bauch der Kanne wird durch den Kopf gebildet, der bis zu den Schulteransätzen wiedergegeben ist. Das krause Haar, die wulstigen Lippen und die schwarze, glänzende Oberfläche charakterisieren ihn als Afrikaner. Er trägt eine phrygische Mütze, die noch rosa Farbreste aufweist. Auf den Lippen und an der Standfläche des Gefäßes sind Reste roter Farbe zu erkennen. Augen und Zähne sind weiß, an den Augen auch Spuren von grüner Farbe. Während umfangreicher Entdeckungs- und Handelsreisen entwickeln die Griechen, insbesondere aber die Athener, eine Vorliebe für das Exotische. Sie schlägt sich auch in der Produktion von Bildern, Skulpturen und Gebrauchsgegenständen nieder.";
+                afrikanerkopf.Description = "Krauses Haar, wulstigen Lippen und schwarze, glänzende Oberfläche charakterisieren die Figur auf diesem Kännchen als Afrikaner. Während umfangreicher Entdeckungs- und Handelsreisen entwickeln die Griechen eine Vorliebe für das Exotische. Sie schlägt sich auch in der Produktion von Bildern, Skulpturen und Gebrauchsgegenständen nieder.";
                 afrikanerkopf.Creationdate = "Mitte 4. Jahrhundert v. Chr.";
                 afrikanerkopf.Findspot = "Athen";
                 afrikanerkopf.Material = "Material:	Ton";
@@ -138,9 +138,9 @@ namespace MKGo
 
                 var bettler = new Item();
                 bettler.Title = "Statuette eines Buckligen";
-                bettler.Detail = "Der Bucklige Bettler";
-                bettler.Detail_en = "The Ugly Beggar";
-                bettler.Description = "Die meisterhaft modellierte Kleinbronze mit den in Silber eingelegten Augen und Zähnen gehört zur Gruppe von Schauspielern, Akrobaten, Zwergen und Straßentypen, die in der hellenistischen Kleinkunst beliebt waren. Aus Alexandria und Kleinasien sind solche Darstellungen seit dem 3. Jahrhundert v. Chr. in großer Zahl bekannt. Mit ihren komischen Bewegungen oder ihrem Aussehen riefen sie allgemeine Heiterkeit hervor, wenn sie bei Gastmählern oder Festspielen auftraten, und man freute sich der eigenen Unversehrtheit. Körperliches Anderssein war auch Ausweis eines schlechten Charakters, sodass die Grotesken als Personifikationen des Übels galten. Man war der Auffassung, dass nur mit dem Anblick des Übels das Üble zu bannen sei. So wurden Missgestaltete durch die Stadt geführt, um alles Unheil auf sie zu übertragen.";
+                bettler.Detail = "Personifikationen des Übels";
+                bettler.Detail_en = "Personifications of Evil";
+                bettler.Description = "Klein, dunkel, bucklig und hässlich - skurrile Figuren wie diese waren in der hellenistischen Kleinkunst beliebt. Die Darstellungen von Schauspielern, Akrobaten, Zwergen und Straßentypen riefen mit ihrem komischen Aussehen allgemeine Heiterkeit hervor. Man erfreute sich der eigenen Unversehrtheit. Körperliches Anderssein war auch Ausweis eines schlechten Charakters, sodass die Grotesken als Personifikationen des Übels galten. Man war der Auffassung, dass nur mit dem Anblick des Übels das Üble zu bannen sei. So wurden Missgestaltete durch die Stadt geführt, um alles Unheil auf sie zu übertragen.";
                 bettler.Creationdate = "3. Jahrhundert v. Chr.";
                 bettler.Findspot = "Ägypten (vermutlich Alexandria)";
                 bettler.Material = "Bronze, Silber (Augen)";
@@ -155,7 +155,7 @@ namespace MKGo
                 sphinx.Title = "Sphinx";
                 sphinx.Detail = "Das Mischwesen";
                 sphinx.Detail_en = "The Mixed Beast";
-                sphinx.Description = "Die 'Hamburger Sphinx' im geläufigen griechischen Sitzschema zählt zum Besten, was an archaischer etruskischer Plastik erhalten ist. Der walzenförmige Löwenkörper des mächtigen Mischwesens ist im Profil gezeigt, während der menschengestaltige Kopf den Betrachter frontal ansieht. Die Flügel sind sichelförmig aufwärts gebogen, der Schwanz ist schwungvoll um den rechten hinteren Schenkel gelegt. In einigen Details, so der Bildung des Mundes, der Augen und der Frisur, hat die griechische Kunst unverkennbar ihre Spuren hinterlassen. Der poröse Stein der hockenden Sphinx war ursprünglich mit einer dünnen Stuckschicht überzogen, die in lebhaften Farben bemalt war. Sphingen, Löwen, Hippokampen und andere Tiere standen vor den Eingängen etruskischer Gräber, um für den Schutz der Anlage Sorge zu tragen. Gegenüber früheren Vorstellungen hat ein Wandel stattgefunden: Gezeigt wird nicht mehr ein Schrecken und Angst einflößendes, dämonisches Wesen, sondern eine gütige Wächterin.";
+                sphinx.Description = "Der Körper einer Raubkatze, Flügel und ein menschlicher Kopf - diese Skulptur stellt eine Sphinx dar. Ursprünglich stammte dieses Mischwesen aus dem Orient, fand jedoch seit dem 7. Jahrhundert vor Christus Eingang in das griechische und etruskische Kunstschaffen. Paarweise aufgestellt bewachten solche Sphinxe etruskische Gräber. Gegenüber früheren Vorstellungen hat ein Wandel stattgefunden: Gezeigt wird nicht mehr ein Schrecken und Angst einflößendes, dämonisches Wesen, sondern eine gütige Wächterin.";
                 sphinx.Creationdate = "3. Viertel 6. Jahrhundert v. Chr.";
                 sphinx.Findspot = "Italien (vermutlich Vulci)";
                 sphinx.Material = "Tuffstein (Nenfro-Tuff)";
