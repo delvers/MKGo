@@ -46,6 +46,9 @@ namespace MKGo
         [ForeignKey(typeof(Room))]
         public int RoomId { get; set; }
 
+        [Ignore]
+        public double[] position { get; set; }
+
         [OneToOne]
         public Room Room { get; set; }
 

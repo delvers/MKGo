@@ -114,6 +114,14 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon.png" />
+    <Content Include="ic_stars_black.png" />
+    <Content Include="ic_map.png" />
+    <Content Include="ic_info.png" />
+    <Content Include="ic_fullscreen_black.png" />
+    <Content Include="ic_collections.png" />
+    <Content Include="ic_arrow_up.png" />
+    <Content Include="ic_arrow_down.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

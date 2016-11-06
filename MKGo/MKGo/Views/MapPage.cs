@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
+using ZXing.Mobile;
+using ZXing.Net.Mobile.Forms;
 
 namespace MKGo
 {
@@ -22,6 +25,9 @@ namespace MKGo
 
             renderTile(map.StartTile);
 
+            var tbi = new ToolbarItem("Add", "ic_fullscreen_black.png", openScanner, 0, 0);
+            ToolbarItems.Add(tbi);
+
             Content = MapLayout;
         }
 
@@ -34,17 +40,20 @@ namespace MKGo
 
             // load navigation buttons
             if (tile.hasPrevTile()) {
-                var prevTileButton = getMapElement(tile.PrevButtonPosition, "ic_arrow_down.png", loadTile(tile.PrevTile));
+                var prevTileButton = getMapElement(tile.PrevButtonPosition, "ic_arrow_down.png", 40, loadTile(tile.PrevTile));
                 MapLayout.Children.Add(prevTileButton);
             }
             if (tile.hasNextTile()) {
-                var nextTileButton = getMapElement(tile.NextButtonPosition, "ic_arrow_up.png", loadTile(tile.NextTile));
+                var nextTileButton = getMapElement(tile.NextButtonPosition, "ic_arrow_up.png", 40, loadTile(tile.NextTile));
                 MapLayout.Children.Add(nextTileButton);
             }
 
             // load items
-            var itemOne = getItemView(App.Items.GetItem(3));
-            MapLayout.Children.Add(itemOne);
+            foreach (Item i in tile.items)
+            {
+                MapLayout.Children.Add(getItemView(i));
+            }
+
         }
 
         // returns view for the map image
@@ -82,12 +91,11 @@ namespace MKGo
         // return map element for specific item
         protected View getItemView(Item item)
         {
-            Double[] pos = {0.6, 300};
-            return getMapElement(pos, ImageSource.FromResource("MKGo.EmbeddedResources.vaseicon.png"), openItem(item));
+            return getMapElement(item.position, ImageSource.FromResource("MKGo.EmbeddedResources.vaseicon.png"), 30, openItem(item));
         }
 
         // generates itemIcon for the right position and with on tab event
-        protected View getMapElement(Double[] position, ImageSource iconSource, EventHandler action)
+        protected View getMapElement(Double[] position, ImageSource iconSource, int height, EventHandler action)
         {
             var itemIcon = new Image
             {
@@ -98,7 +106,7 @@ namespace MKGo
 
             var itemView = new Grid();  // workarround for bug 36097 (https://bugzilla.xamarin.com/show_bug.cgi?id=36097)
             itemView.Children.Add(itemIcon);
-            AbsoluteLayout.SetLayoutBounds(itemView, new Rectangle(position[0], position[1], 40, AbsoluteLayout.AutoSize));
+            AbsoluteLayout.SetLayoutBounds(itemView, new Rectangle(position[0], position[1], height, AbsoluteLayout.AutoSize));
             AbsoluteLayout.SetLayoutFlags(itemView, AbsoluteLayoutFlags.XProportional);
 
             var tapIcon = new TapGestureRecognizer();
@@ -134,6 +142,40 @@ namespace MKGo
                 Navigation.PushAsync(itemPage);
                 //DisplayAlert("Alert", item.Title, "OK");
             };
+        }
+
+        async void openScanner()
+        {
+            var options = new MobileBarcodeScanningOptions();
+            options.TryHarder = true;
+            options.PossibleFormats.Add(ZXing.BarcodeFormat.QR_CODE);
+
+
+            var scanPage = new ZXingScannerPage(options);
+            scanPage.OnScanResult += (result) => {
+                scanPage.IsScanning = false;
+                Device.BeginInvokeOnMainThread(() => {
+                    var item = App.CollectionItems.addItem(result.Text);
+                    var itemPage = new ItemPage(scanPage);
+                    itemPage.BindingContext = item;
+                    Navigation.PushAsync(itemPage);
+
+                });
+            };
+
+            scanPage.Title = "Scanner";
+            Task t = new Task(delegate
+            {
+                while (scanPage.IsScanning)
+                {
+                    scanPage.AutoFocus();
+                    Task.Delay(2000).Wait();
+
+                }
+            });
+
+            await Navigation.PushAsync(scanPage);
+
         }
     }
 

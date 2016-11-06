@@ -24,6 +24,12 @@ namespace MKGo
                 NextButtonPosition = new Double[] { 0.315, 20 },
             };
 
+            Double[] pos = { 0.5, 340 };
+            var i = App.Items.GetItem(3);
+            i.position = pos;
+            startTile.items = new List<Item>();
+            startTile.items.Add(i);
+
             var secondTile = new MapTile()
             {
                 ImageSource = ImageSource.FromResource("MKGo.EmbeddedResources.tile2-10zu16.png"),
@@ -62,6 +68,12 @@ namespace MKGo
         public MapTile PrevTile;
         public Double[] NextButtonPosition;
         public Double[] PrevButtonPosition;
+        public List<Item> items;
+
+        public MapTile()
+        {
+            items = new List<Item>();
+        }
 
         internal bool hasPrevTile()
         {
