@@ -84,6 +84,7 @@ namespace MKGo
 
             AbsoluteLayout.SetLayoutBounds(MapBgContainer, new Rectangle(0,0,1,AbsoluteLayout.AutoSize));
             AbsoluteLayout.SetLayoutFlags(MapBgContainer, AbsoluteLayoutFlags.WidthProportional);
+            
 
             return MapBgContainer;
         }
@@ -107,7 +108,8 @@ namespace MKGo
             var itemView = new Grid();  // workarround for bug 36097 (https://bugzilla.xamarin.com/show_bug.cgi?id=36097)
             itemView.Children.Add(itemIcon);
             AbsoluteLayout.SetLayoutBounds(itemView, new Rectangle(position[0], position[1], height, AbsoluteLayout.AutoSize));
-            AbsoluteLayout.SetLayoutFlags(itemView, AbsoluteLayoutFlags.XProportional);
+            AbsoluteLayout.SetLayoutFlags(itemView, AbsoluteLayoutFlags.PositionProportional);
+            
 
             var tapIcon = new TapGestureRecognizer();
             tapIcon.Tapped += action;
