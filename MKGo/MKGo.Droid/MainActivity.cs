@@ -14,7 +14,7 @@ namespace MKGo.Droid
               Icon = "@drawable/icon", 
               Theme = "@style/MainTheme.Base", 
              // MainLauncher = true, 
-              ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+              ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)

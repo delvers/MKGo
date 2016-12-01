@@ -74,6 +74,8 @@ namespace MKGo
                 vase.Prio = 1;
                 vase.Url = "http://sammlungonline.mkg-hamburg.de/de/object/Schnurösengefäß-mit-Schiffsdarstellung/1919.2/dc00125086";
                 vase.Id = 1;
+                vase.positionX = 0.75;
+                vase.positionY = 0.38;
                 items.Add(vase);
 
                 var tonfiguren = new Item();
@@ -89,6 +91,8 @@ namespace MKGo
                 tonfiguren.Prio = 2;
                 tonfiguren.Url = "http://sammlungonline.mkg-hamburg.de/de/object/Harpokrates/1989.349/dc00126886";
                 tonfiguren.Id = 2;
+                tonfiguren.positionX = 0.5;
+                tonfiguren.positionY = 0.53;
                 items.Add(tonfiguren);
 
                 var mumienporträt = new Item();
@@ -104,6 +108,8 @@ namespace MKGo
                 mumienporträt.Prio = 3;
                 mumienporträt.Url = "http://sammlungonline.mkg-hamburg.de/de/object/Mumienporträt-einer-Frau/1928.42/dc00125645";
                 mumienporträt.Id = 3;
+                mumienporträt.positionX = 0.35;
+                mumienporträt.positionY = 0.85;
                 items.Add(mumienporträt);
 
                 var perserkanne = new Item();
@@ -119,6 +125,8 @@ namespace MKGo
                 perserkanne.Prio = 4;
                 perserkanne.Url = "http://sammlungonline.mkg-hamburg.de/de/object/Oinochoe-Eurymedon-Kanne-oder-Perser-Kanne/1981.173/dc00126657?s=griechen&h=0";
                 perserkanne.Id = 4;
+                perserkanne.positionX = 0.46;
+                perserkanne.positionY = 0.7;
                 items.Add(perserkanne);
 
                 var afrikanerkopf = new Item();
@@ -134,6 +142,8 @@ namespace MKGo
                 afrikanerkopf.Prio = 5;
                 afrikanerkopf.Url = "http://sammlungonline.mkg-hamburg.de/de/object/Kännchen-in-Form-eines-Afrikanerkopfes/1962.126/dc00126056";
                 afrikanerkopf.Id = 5;
+                afrikanerkopf.positionX = 0.46;
+                afrikanerkopf.positionY = 0.85;
                 items.Add(afrikanerkopf);
 
                 var bettler = new Item();
@@ -149,6 +159,8 @@ namespace MKGo
                 bettler.Prio = 6;
                 bettler.Url = "http://sammlungonline.mkg-hamburg.de/de/object/Statuette-eines-Buckligen/1949.40/dc00125916";
                 bettler.Id = 6;
+                bettler.positionX = 0.18;
+                bettler.positionY = 0.64;
                 items.Add(bettler);
 
                 var sphinx = new Item();
@@ -163,6 +175,8 @@ namespace MKGo
                 sphinx.Prio = 7;
                 sphinx.Url = "http://sammlungonline.mkg-hamburg.de/de/object/Sphinx/1973.43/dc00126601";
                 sphinx.Id = 7;
+                sphinx.positionX = 0.45;
+                sphinx.positionY = 0.45;
                 items.Add(sphinx);
 
 
