@@ -59,6 +59,22 @@ namespace MKGo
             }
             return item;
         }
+
+        public bool inCollection(Item item)
+        {
+
+            return GetItemId(item.Id) != null;
+        }
+
+        public CollectionItem GetItemId(int id)
+        {
+            lock (App.dbLock)
+            {
+
+                return database.Table<CollectionItem>().FirstOrDefault(x => x.ItemId == id);
+            }
+        }
+
         public int deleteAll()
         {
             return database.DeleteAll<CollectionItem>();

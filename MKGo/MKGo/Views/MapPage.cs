@@ -92,7 +92,15 @@ namespace MKGo
         // return map element for specific item
         protected View getItemView(Item item)
         {
-            return getMapElement(item.position, ImageSource.FromResource("MKGo.EmbeddedResources.vaseicon.png"), 30, openItem(item));
+            String icon;
+            if (App.CollectionItems.inCollection(item))
+            {
+                icon = "MKGo.EmbeddedResources.vaseicon.png";
+            } else
+            {
+                icon = "MKGo.EmbeddedResources.questionmark.png";
+            }
+            return getMapElement(item.position, ImageSource.FromResource(icon), 30, openItem(item));
         }
 
         // generates itemIcon for the right position and with on tab event
