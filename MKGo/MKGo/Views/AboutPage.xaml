@@ -7,7 +7,7 @@
     <StackLayout>
       <Label Text="TODO Show some Information about this App." HorizontalOptions="Center" VerticalOptions="Center" />
       <Button Text="select tour" Clicked="OnSelectTour" />
-      <Button Text="reset selected items" Clicked="OnResetItems" />
+      <Button Text="reset collected items" Clicked="OnResetItems" />
       <Button Text="add example Items" Clicked="OnAddItems"/>
     </StackLayout>
   </ContentPage.Content>
