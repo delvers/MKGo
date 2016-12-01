@@ -92,15 +92,14 @@ namespace MKGo
         // return map element for specific item
         protected View getItemView(Item item)
         {
-            String icon;
             if (App.CollectionItems.inCollection(item))
             {
-                icon = "MKGo.EmbeddedResources.vaseicon.png";
+                return getMapElement(item.position, ImageSource.FromResource("MKGo.EmbeddedResources.vaseicon.png"), 30, openItem(item));
             } else
             {
-                icon = "MKGo.EmbeddedResources.questionmark.png";
+                return getMapElement(item.position, ImageSource.FromResource("MKGo.EmbeddedResources.questionmark.png"), 30, openScanner);
             }
-            return getMapElement(item.position, ImageSource.FromResource(icon), 30, openItem(item));
+            
         }
 
         // generates itemIcon for the right position and with on tab event
@@ -154,7 +153,13 @@ namespace MKGo
             };
         }
 
-        async void openScanner()
+        void openScanner()
+        {
+
+            openScanner(new object(), new EventArgs());
+        }
+
+        async void openScanner(object sender, EventArgs e )
         {
             var options = new MobileBarcodeScanningOptions();
             options.TryHarder = true;
